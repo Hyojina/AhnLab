@@ -1,35 +1,130 @@
+/* 웹 전체에 적용할 내용 */
 body {
-  /* color:  */
-  /* font-size: */
-  font-weight: 400;
   font-family: "Nanum Gothic", sans-serif;
-  /* line-height: 1.4; */
+  line-height: 24px;
+  color: #707070;
 }
-
 img {
+  /* a태그와 img태그간의 크기차이를 맞춰줌. 이유는 모름 */
   display: block;
 }
+a {
+  text-decoration: none;
+}
 
+/* 헤더 바 */
 .header {
-  /* width: 100%;
-  min-width: 1620px; */
-  width: 1620px;
+  width: 100%;
+  min-width: 1620px;
   height: 80px;
-  margin: 0 auto;
+  display: block;
   background-color: #fff;
   border-bottom: 1px solid #bbb;
+}
+.header__wrap {
+  max-width: 1920px;
+  min-width: 1500px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
   position: relative;
 }
 
+/* 헤더 로고 */
 .header__logo {
-  height: 24px;
-  margin: auto 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  position: absolute;
+  padding: 27px 30px 0 50px;
 }
 
-/* 
-background: url(//image.ahnlab.com/img_upload/kr/site/images2/common/bg_gnb.png) no-repeat -100px -33px;
-} */
+/* 헤더 메인메뉴 */
+.header__main-menu {
+  height: 80px;
+}
+.header__main-menu > ul {
+  display: flex;
+  left: 0px;
+}
+.header__main-menu > ul > li {
+  height: 53px;
+  font-size: 18px;
+  color: #282828;
+  margin: 0 13px;
+  padding: 27px 15px 0;
+}
+
+/* 헤더 서브메뉴 */
+.header__sub-menu {
+  height: 80px;
+  /* 오른쪽 정렬을 위해 */
+  position: absolute;
+  right: 0;
+}
+.header__sub-menu > ul {
+  display: flex;
+  padding-top: 28px;
+  padding-right: 215px;
+}
+.header__sub-menu > ul > li {
+  color: #707070;
+  font-size: 12px;
+  padding: 0 15px;
+  display: inline-block;
+}
+.header__sub-menu > ul > li:nth-child(2),
+.header__sub-menu > ul > li:nth-child(3),
+.header__sub-menu > ul > li:nth-child(4) {
+  background: url(./images/bg_gnb.png) no-repeat 0 -1px;
+}
+/* 패밀리사이트 화살표 */
+.header__sub-menu > ul > li:nth-child(4) > span {
+  display: inline-block;
+  width: 10px;
+  height: 16px;
+  background: url(./images/bg_gnb.png) no-repeat -49px -34px;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+/* 페이지 언어 선택 */
+.header__sub-menu--loc > a > span {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url(./images/bg_gnb.png) no-repeat 0 -35px;
+  vertical-align: middle;
+  /* background-position: -25px -35px; 이건 hover됐을 때!*/
+}
+/* 검색창 */
+.header__sub-menu--ser {
+  width: 153px;
+  height: 21px;
+  right: 50px;
+  top: 27px;
+  position: absolute;
+  color: #a8a7a7;
+  border: 1px solid #d8d8d8;
+  padding-bottom: 4px;
+  padding-left: 5px;
+}
+.header__sub-menu--ser > input {
+  /* 테두리 안보이게 */
+  border: none;
+  /* 아이콘 침범하지 않게 */
+  width: 103px;
+  /* 활성화시 테두리 안보이게 */
+  outline: none;
+}
+.header__sub-menu--ser .btn--remove {
+  width: 14px;
+  height: 14px;
+  background: url(./images/bg_gnb.png) no-repeat -130px -35px;
+  margin-left: 2px;
+  margin-right: 1px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.header__sub-menu--ser .btn--search {
+  width: 14px;
+  height: 14px;
+  background: url(./images/bg_gnb.png) no-repeat -100px -35px;
+  display: inline-block;
+  vertical-align: middle;
+}
