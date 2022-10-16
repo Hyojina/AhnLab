@@ -20,43 +20,83 @@
     <script defer src="./main.js"></script>
   </head>
   <body>
-    <header class="header">
-      <div class="header__wrap">
-        <!-- 헤더 로고 -->
-        <div class="header__logo">
-          <a href="/"><img src="./images/img_logo.gif" alt="logo" /></a>
+    <div class="body__wrap">
+      <!-- 헤더 -->
+      <header class="header">
+        <div class="header__wrap">
+          <!-- 헤더 로고 -->
+          <div class="header__logo">
+            <a href="/"><img src="./images/img_logo.gif" alt="logo" /></a>
+          </div>
+          <!-- 헤더 메인메뉴 -->
+          <nav class="header__main-menu">
+            <ul>
+              <li>제품</li>
+              <li>서비스</li>
+              <li>제품구매</li>
+              <li>다운로드</li>
+              <li>고객지원</li>
+              <li>보안정보</li>
+              <li>안랩TV</li>
+            </ul>
+          </nav>
+          <!-- 헤더 서브메뉴 -->
+          <nav class="header__sub-menu">
+            <ul>
+              <li>로그인</li>
+              <li>MY보안센터</li>
+              <li>파트너</li>
+              <li>패밀리 사이트<span></span></li>
+              <li class="header__sub-menu--loc">
+                <a href="/"><span></span>한국</a>
+              </li>
+            </ul>
+            <div class="header__sub-menu--ser">
+              <input type="text" placeholder="견적문의" />
+              <a class="btn--remove" href="/"></a>
+              <a class="btn--search" href="/"></a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- 메인 -->
+      <main class="main">
+        <!-- 배너 섹션 -->
+        <div class="banner section">
+          <!-- 배너 이미지 -->
+          <div class="banner--image">
+            <div class="slider">
+              <div class="img"></div>
+            </div>
+            <div class="slider">
+              <div class="img"></div>
+            </div>
+            <div class="slider">
+              <div class="img"></div>
+            </div>
+          </div>
+          <!-- 배너 텍스트 -->
+          <div class="banner--text">
+            <heading calss="heading">
+              <p>최신의 위협에 대응하는</p>
+              <p>최적의 보안</p>
+              <ul>
+                <li>솔루션</li>
+                <li>플랫폼</li>
+                <li>파트너</li>
+              </ul>
+            </heading>
+            <p class="desc">
+              안랩은 탁월한 기술력과 노하우로
+              <br />
+              더욱 안전한 미래를 만들어 갑니다.
+            </p>
+          </div>
         </div>
 
-        <!-- 헤더 메인메뉴 -->
-        <nav class="header__main-menu">
-          <ul>
-            <li>제품</li>
-            <li>서비스</li>
-            <li>제품구매</li>
-            <li>다운로드</li>
-            <li>고객지원</li>
-            <li>보안정보</li>
-            <li>안랩TV</li>
-          </ul>
-        </nav>
-        <!-- 헤더 서브메뉴 -->
-        <nav class="header__sub-menu">
-          <ul>
-            <li>로그인</li>
-            <li>MY보안센터</li>
-            <li>파트너</li>
-            <li>패밀리 사이트<span></span></li>
-            <li class="header__sub-menu--loc">
-              <a href="/"><span></span>한국</a>
-            </li>
-          </ul>
-          <div class="header__sub-menu--ser">
-            <input type="text" placeholder="견적문의" />
-            <a class="btn--remove" href="/"></a>
-            <a class="btn--search" href="/"></a>
-          </div>
-        </nav>
-      </div>
-    </header>
+        <!-- 뉴스 -->
+      </main>
+    </div>
   </body>
 </html>
