@@ -22,7 +22,7 @@
   <body>
     <div class="body__wrap">
       <!-- 헤더 -->
-      <header class="header">
+      <header class="header__top">
         <div class="header__wrap">
           <!-- 헤더 로고 -->
           <div class="header__logo">
@@ -63,31 +63,36 @@
       <!-- 메인 -->
       <main class="main">
         <!-- 배너 섹션 -->
-        <div class="banner section">
+        <div class="section banner">
           <!-- 배너 이미지 -->
-          <div class="banner--image">
-            <div class="slider">
-              <div class="img"></div>
-            </div>
-            <div class="slider">
-              <div class="img"></div>
-            </div>
-            <div class="slider">
-              <div class="img"></div>
+          <div class="banner__img">
+            <div class="slider slider_ani">
+              <div class="slider_test">
+                <div class="images img01 reduce_ani"></div>
+              </div>
+              <div class="slider_test">
+                <div class="images img02"></div>
+              </div>
+              <div class="slider_test">
+                <div class="images img03"></div>
+              </div>
+              <div class="slider_test">
+                <div class="images img04"></div>
+              </div>
             </div>
           </div>
           <!-- 배너 텍스트 -->
           <div class="banner--text">
-            <heading calss="heading">
-              <p>최신의 위협에 대응하는</p>
+            <heading class="heading__text">
+              <p>최신 위협에 대응하는</p>
               <p>최적의 보안</p>
-              <ul>
-                <li>솔루션</li>
-                <li>플랫폼</li>
-                <li>파트너</li>
-              </ul>
+              <div>
+                <p class="text--show">솔루션</p>
+                <p class="text--clear">플랫폼</p>
+                <p class="text--clear">파트너</p>
+              </div>
             </heading>
-            <p class="desc">
+            <p class="desc__text">
               안랩은 탁월한 기술력과 노하우로
               <br />
               더욱 안전한 미래를 만들어 갑니다.
@@ -95,7 +100,101 @@
           </div>
         </div>
 
-        <!-- 뉴스 -->
+        <!-- 뉴스 섹션-->
+        <div class="news">
+          <div class="news__container">
+            <nav class="news__nav">
+              <h2>AhnLab News</h2>
+              <ul class="news__nav--menu">
+                <li>월간 ‘安’</li>
+                <li>시큐리티 레터</li>
+                <li>안랩 TV</li>
+                <li>ASEC 블로그</li>
+                <li>ASEC 리포트</li>
+                <li>보도자료</li>
+              </ul>
+            </nav>
+            <div class="news__wrap">
+              <div class="news__wrap--top">
+                <div class="news__contents news01"></div>
+                <div class="news__contents news02">
+                  <span class="news__contents--head">
+                    <h3 class="head__icons icon--press"></h3>
+                    보도자료
+                  </span>
+                  <div class="news__contents--text">
+                    <h4>디지털 직무 무료교육 프로그램 ‘안랩샘’ 15기 개강</h4>
+                    <p>
+                      안랩과 맘이랜서가 공동 주최하는 디지털 직무 무료교육
+                      프로그램 ‘안랩샘(SEM)’ 15기가 9월 30일~11월 27일에
+                      진행됩니다. 이번 교육에는 어떤 프로그램이 준비돼 있는지
+                      살펴보겠습니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="news__contents news03">
+                  <span class="news__contents--head">
+                    <h3 class="head__icons icon--letter"></h3>
+                    시큐리티 레터
+                  </span>
+                  <div class="news__contents--text">
+                    <h4>알고 보니 폭탄? 원격 접속 툴의 두 얼굴</h4>
+                    <p>
+                      원격 접속 툴(RAT)은 공격자가 자주 사용하는 악성코드 중
+                      하나입니다. 백도어와 기능이 유사하지만, 시스템을 원격으로
+                      제어하는 정상 소프트웨어이기도 합니다. 원격 접속 툴을
+                      악용한 사례를 살펴보겠습니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="news__wrap--bottom">
+                <div class="news__contents news04">
+                  <span class="news__contents--head">
+                    <h3 class="head__icons icon--press"></h3>
+                    보도자료
+                  </span>
+                  <div class="news__contents--text">
+                    <h4>환경 경영 실천을 위한 안랩의 노력</h4>
+                    <p>
+                      안랩은 다양한 행사에 친환경 요소를 적극적으로 도입하며
+                      환경경영을 실천하고 있습니다. 환경경영을 위해 안랩이 어떤
+                      노력을 하고 있는지 구체적으로 살펴보겠습니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="news__contents news05">
+                  <span class="news__contents--head">
+                    <h3 class="head__icons icon--blog"></h3>
+                    ASEC 블로그
+                  </span>
+                  <div class="news__contents--text">
+                    <h4>워드로 위장한 구로더 악성코드 유포 중</h4>
+                    <p>
+                      구로더(GuLoader) 악성코드가 워드로 위장해 국내 기업
+                      사용자를 공격하고 있습니다. 구로더는 백신의 탐지를
+                      우회하기 위해 계속 변형되고 있어 주의해야 합니다. 구로더
+                      악성코드의 유포 방식을 알아보겠습니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="news__contents news06">
+                  <span class="news__contents--head">
+                    <h3 class="head__icons icon--letter"></h3>
+                    시큐리티 레터
+                  </span>
+                  <div class="news__contents--text">
+                    <h4>IT용어, 순우리말로 쉽게 소통하기</h4>
+                    <p>
+                      10월 9일 한글날을 기념해 실무에서 자주 사용하는 외래어 IT
+                      용어의 순우리말을 알아보겠습니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   </body>

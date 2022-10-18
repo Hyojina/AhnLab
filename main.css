@@ -3,7 +3,6 @@ body {
   font-family: "Nanum Gothic", sans-serif;
   line-height: 24px;
   color: #707070;
-
   /* 코딩 후 삭제필수 */
   height: 4000px;
 }
@@ -20,6 +19,7 @@ a {
   position: relative;
   width: 100%;
   min-width: 1500px;
+  overflow-x: hidden;
 }
 /* 바디의 큰 섹션마다 적용할 내용 */
 /* 배너, 뉴스 등 */
@@ -28,8 +28,13 @@ a {
   width: 100%;
   min-width: 1620px;
   background-color: #fff;
-  overflow: hidden;
   line-height: 1.3;
+}
+
+header {
+  /* z-index를 쓰려면 position값 필수! */
+  position: relative;
+  z-index: 500;
 }
 
 /* 메인에 적용할 내용 */
@@ -37,17 +42,19 @@ main {
   position: relative;
   width: 100%;
   min-height: 580px;
+  z-index: 50;
 }
 /* -------------------------------------------------------- */
 
 /* 헤더 */
-.header {
+.header__top {
   width: 100%;
   min-width: 1620px;
   height: 80px;
   display: block;
   background-color: #fff;
   border-bottom: 1px solid #bbb;
+  position: fixed;
 }
 /* 헤더 컨텐츠영역 */
 .header__wrap {
@@ -162,57 +169,253 @@ main {
 }
 /* -------------------------------------------------------- */
 .banner {
-  background-color: blue;
   width: 100%;
   height: 100vh;
   max-height: 100%;
+  position: relative;
   display: flex;
+  align-items: center;
+  min-height: auto;
+  /* 이미지 스크롤 없애기 */
+  overflow: hidden;
+}
+
+/* 배너 이미지 컨테이너 */
+.banner__img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+/* 배너 이미지를 슬라이드할 넓은 바 개념 */
+.banner__img .slider {
+  width: 400%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* 배너 이미지 개별 슬라이드(애니메이션 적용) */
+.banner__img .slider_test {
+  width: 25%;
+  height: 100%;
   position: relative;
 }
 
-/* 배너 이미지 */
-.banner--image {
-  height: 100%;
-  display: flex;
+.slider_ani {
+  transition-duration: 600ms;
 }
-.banner--image .slider {
-  height: 100%;
-  background-color: gold;
-}
-.banner--image .img {
-  position: absolute;
+
+/* 배너 이미지 사이즈 및 위치 설정 */
+.banner__img .images {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
-/* 문제: .img를 .img01로 변경하면 적용안됨 오류! */
-.banner--image > .slider:nth-child(1) > .img {
-  /* 이미지 url 개별속성 사용 필수 */
+
+.banner__img .reduce_ani {
+  animation: banner-reduce 3.6s linear infinite;
+}
+
+.banner__img .images.img01,
+.banner__img .images.img04 {
   background-image: url(./images/img_main1.jpg);
 }
-.banner--image > .slider:nth-child(2) > .img {
+.banner__img .images.img02 {
   background-image: url(./images/img_main2.jpg);
 }
-.banner--image > .slider:nth-child(3) > .img {
+.banner__img .images.img03 {
   background-image: url(./images/img_main3.jpg);
+}
+
+/* 배너 이미지 축소 애니메이션 */
+@keyframes banner-reduce {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+  }
 }
 
 /* 배너 텍스트 */
 .banner--text {
   /* 배너 텍스트 위치잡기 */
-  position: absolute;
-  top: 40%;
+  position: relative;
   padding-left: 60px;
-
   color: #fff;
   text-align: left;
-  /* 스크롤했을때 가운데에 오게 해보기 */
-  /* max-width: 1600px;
+  margin: 0 auto;
+  height: 100%;
+  top: 38%;
+  /* 어디에 쓰였더라*/
   width: 100%;
-  margin: 0 auto; */
+  max-width: 1600px;
+  max-height: 1100px;
 }
-.banner--text > .heading {
+/* 배너 텍스트 큰 글씨 */
+.heading__text {
+  font-size: 60px;
+  font-weight: 700;
+}
+/* 배너 텍스트 큰 글씨 두번째줄 정렬 */
+.heading__text > p:nth-child(2),
+.heading__text div {
+  display: inline-block;
+}
+/* 배너 텍스트 파란글씨 위치잡기 */
+.heading__text div {
   position: relative;
+  width: 200px;
+  bottom: -20px;
+}
+/* 배너 텍스트 파란글씨 애니메이션 */
+.text--show {
+  color: #149eff;
+  position: absolute;
+  animation: txt-slide 3.6s linear infinite;
+}
+.text--clear {
+  display: none;
+}
+@keyframes txt-slide {
+  0% {
+    bottom: 60px;
+    opacity: 0;
+  }
+  30% {
+    bottom: 0;
+    opacity: 1;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+/* 배너 텍스트 작은글씨 */
+.desc__text {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 40px;
+}
+/* -------------------------------------------------------- */
+.news {
+  max-width: 1920px;
+  min-height: 870px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.news__container {
+  display: flex;
+  width: 100%;
+  min-width: 1740px;
+  height: 100%;
+  justify-content: center;
+}
+.news__nav {
+  padding-top: 5%;
+  max-width: 250px;
+  width: 100%;
+}
+
+.news__nav h2 {
+  color: black;
+  font-size: 70px;
+  font-weight: 700;
+  margin-top: 110px;
+  margin-bottom: 70px;
+  line-height: 1;
+}
+
+.news__nav--menu li {
+  margin-top: 18px;
+  font-weight: 400;
+  font-size: 22px;
+  color: #666;
+  text-align: left;
+}
+
+.news__wrap {
+  max-width: 1350px;
+  height: 100%;
+  width: 100%;
+}
+
+.news__wrap--top,
+.news__wrap--bottom {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  float: right;
+  justify-content: right;
+}
+
+.news02,
+.news04,
+.news06 {
+  background-color: #f7f9fb;
+}
+
+.news__contents {
+  position: relative;
+  width: 450px;
+  height: 450px;
+}
+
+.news__contents--head {
+  display: flex;
+  padding: 50px 50px 0;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* .news__contents:nth-child(4)  */
+.head__icons {
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.icon--press {
+  background-image: url(./images/ico_press.png);
+}
+
+.icon--letter {
+  background-image: url(./images/ico_letter.png);
+}
+
+.icon--blog {
+  background-image: url(./images/ico_blog.png);
+}
+
+.news__contents--text {
+  position: absolute;
+  left: 50px;
+  width: calc(100% - 140px);
+  height: 100%;
+  max-height: 205px;
+  vertical-align: top;
+  word-break: keep-all;
+  bottom: 70px;
+}
+
+.news__contents--text h4 {
+  height: 60px;
+  font-size: 22px;
+  font-weight: 700;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+  color: #000;
+}
+
+.news__contents--text p {
+  max-height: 120px;
+  margin-top: 25px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
 }
