@@ -34,7 +34,6 @@ a {
 header {
   /* z-index를 쓰려면 position값 필수! */
   position: relative;
-  z-index: 500;
 }
 
 /* 메인에 적용할 내용 */
@@ -42,7 +41,6 @@ main {
   position: relative;
   width: 100%;
   min-height: 580px;
-  z-index: 50;
 }
 /* -------------------------------------------------------- */
 
@@ -55,6 +53,7 @@ main {
   background-color: #fff;
   border-bottom: 1px solid #bbb;
   position: fixed;
+  z-index: 500;
 }
 /* 헤더 컨텐츠영역 */
 .header__wrap {
@@ -88,6 +87,84 @@ main {
   color: #282828;
   margin: 0 13px;
   padding: 27px 15px 0;
+}
+.header__main-menu > ul > li:hover {
+  height: 49px;
+  border-bottom: 4px solid #1f4787;
+  color: #1f4787;
+  cursor: pointer;
+}
+
+/* 호버시 확장되는 메인 메뉴*/
+.main-menu .prod {
+  width: 100%;
+  top: 81px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  /* 메뉴마다 다른부분 */
+  height: 370px;
+}
+
+.prod__top {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  color: #707070;
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* 제품메뉴 글씨색 */
+.prod__top--left div,
+.prod__top--right div,
+.prod__top--right ul li:nth-child(1) {
+  color: #000;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+.prod__top--left div,
+.prod__top--right div {
+  font-size: 16px;
+}
+.prod__top--left {
+  width: 10%;
+  padding-top: 12px;
+}
+.prod__top--left ul {
+  margin-top: 14px;
+}
+/* 제품 메뉴 오른쪽 */
+.prod__top--right {
+  height: 100%;
+  width: 65%;
+  display: flex;
+  padding-left: 30px;
+  padding-top: 12px;
+  border-left: 1px solid #e5e5e5;
+  position: relative;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.prod__top--right section:nth-child(2),
+.prod__top--right section:nth-child(3),
+.prod__top--right section:nth-child(4) {
+  margin-top: 40px;
+}
+
+.prod__top--right section {
+  width: 20%;
+}
+
+.prod__bottom {
+  width: 100%;
+  height: 20%;
+  border-top: 1px solid #e5e5e5;
 }
 
 /* 헤더 서브메뉴 */

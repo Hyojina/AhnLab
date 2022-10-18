@@ -2,6 +2,7 @@ const bn_img = document.querySelectorAll(".images");
 const bn_slider = document.querySelectorAll(".slider_test");
 const bn_txt = document.querySelectorAll(".heading__text div p");
 const bs = document.querySelector(".slider_ani");
+const hd_menu = document.querySelector(".header__main-menu li");
 
 let a = 0;
 let b = 1;
@@ -43,3 +44,11 @@ setInterval(() => {
     z = 0;
   }
 }, 3600);
+
+// 헤더 메인메뉴 호버
+hd_menu.addEventListener("mouseover", (event) => {
+  hd_menu.querySelector("div").style.display = "block";
+});
+hd_menu.addEventListener("mouseout", (event) => {
+  hd_menu.querySelector("div").style.display = "none";
+});
