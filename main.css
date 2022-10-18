@@ -419,3 +419,78 @@ main {
   line-height: 1.5;
   color: #666;
 }
+/* -------------------------------------------------------- */
+
+/* 슬로건 */
+.slogan {
+  width: 100%;
+  height: 100vh;
+  max-width: 1920px;
+  min-width: 1620px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.row {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  width: calc(100% - 60px);
+  position: relative;
+  max-width: 1400px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.figure {
+  position: absolute;
+  width: 544px;
+  height: 544px;
+}
+
+.infiniteRotating {
+  max-width: 100%;
+  animation: rotate_image 25s linear infinite;
+}
+
+@keyframes rotate_image {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.slogan__text {
+  width: 88%;
+  color: #000;
+  font-size: 120px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.slogan__text p:nth-child(1) {
+  text-align: left;
+}
+
+.slogan__text p:nth-child(2) {
+  text-align: right;
+}
+
+.slogan__text p:nth-child(3) {
+  font-size: 30px;
+  margin-top: 50px;
+}
+
+/* -------------------------------------------------------- */
