@@ -52,7 +52,7 @@ main {
   display: block;
   background-color: #fff;
   border-bottom: 1px solid #bbb;
-  position: fixed;
+  position: absolute;
   z-index: 500;
 }
 /* 헤더 컨텐츠영역 */
@@ -97,6 +97,7 @@ main {
 
 /* 호버시 확장되는 메인 메뉴*/
 .main-menu .prod {
+  display: none;
   width: 100%;
   top: 81px;
   left: 0;
@@ -185,6 +186,12 @@ main {
   padding: 0 15px;
   display: inline-block;
 }
+
+.header__sub-menu > ul > li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .header__sub-menu > ul > li:nth-child(2),
 .header__sub-menu > ul > li:nth-child(3),
 .header__sub-menu > ul > li:nth-child(4) {
@@ -199,6 +206,7 @@ main {
   vertical-align: middle;
   margin-left: 8px;
 }
+
 /* 페이지 언어 선택 */
 .header__sub-menu--loc > a > span {
   display: inline-block;
@@ -208,6 +216,10 @@ main {
   vertical-align: middle;
   /* background-position: -25px -35px; 이건 hover됐을 때!*/
 }
+.header__sub-menu--loc > a:visited {
+  color: #707070;
+}
+
 /* 검색창 */
 .header__sub-menu--ser {
   width: 153px;
@@ -411,6 +423,28 @@ main {
   font-size: 22px;
   color: #666;
   text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.news__nav--menu li:hover {
+  color: #1a4ab9;
+  cursor: pointer;
+}
+
+.news__nav--menu li span {
+  display: flex;
+  color: white;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.news__nav--menu li:hover span {
+  background-color: #1a4ab9;
+  border-radius: 50%;
 }
 
 .news__wrap {
@@ -428,6 +462,10 @@ main {
   justify-content: right;
 }
 
+.news01 {
+  display: none;
+}
+
 .news02,
 .news04,
 .news06 {
@@ -438,6 +476,7 @@ main {
   position: relative;
   width: 450px;
   height: 450px;
+  transition: 200ms ease;
 }
 
 .news__contents--head {
@@ -496,6 +535,29 @@ main {
   line-height: 1.5;
   color: #666;
 }
+
+.news__contents:hover {
+  background-color: #1a4ab9;
+}
+.news__contents:hover,
+.news__contents:hover .news__contents--head,
+.news__contents:hover .news__contents--text h4,
+.news__contents:hover .news__contents--text p {
+  color: white;
+}
+
+.news__contents:hover .icon--press {
+  background-image: url(./images/ico_press_hover.png);
+}
+
+.news__contents:hover .icon--letter {
+  background-image: url(./images/ico_letter_hover.png);
+}
+
+.news__contents:hover .icon--blog {
+  background-image: url(./images/ico_blog_hover.png);
+}
+
 /* -------------------------------------------------------- */
 
 /* 슬로건 */
@@ -561,13 +623,40 @@ main {
   text-align: left;
 }
 
+@keyframes slide1 {
+  0% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .slogan__text p:nth-child(2) {
   text-align: right;
+}
+
+@keyframes slide2 {
+  0% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .slogan__text p:nth-child(3) {
   font-size: 30px;
   margin-top: 50px;
+}
+
+@keyframes slide3 {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* -------------------------------------------------------- */
