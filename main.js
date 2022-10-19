@@ -56,26 +56,20 @@ setInterval(() => {
 
 // 헤더 메인메뉴 호버
 hd_menu.addEventListener("mouseover", (event) => {
-  hd_menu.querySelector("div").style.display = "block";
+  hd_menu.querySelector(".menu-list").style.display = "block";
 });
 hd_menu.addEventListener("mouseout", (event) => {
-  hd_menu.querySelector("div").style.display = "none";
+  hd_menu.querySelector(".menu-list").style.display = "none";
 });
 
 window.addEventListener("scroll", (event) => {
   // console.log(window.pageYOffset);
-  if (scroll_now > 1500) {
-    slogan.style.display = "static";
-    slogan_p[0].style.animation = "slide1 0.1s linear";
-    slogan_p[1].style.animation = "slide2 0.1s linear";
-    slogan_p[2].style.animation = "slide3 0.1s linear";
-    console.log(slogan.style.display);
-
-    // header.style.position = "sticky";
+  if (window.pageYOffset > 1600) {
+    slogan.style.display = "block";
+    slogan_p.forEach((x, n) => {
+      x.style.animation = `slide${n + 1} 0.2s linear`;
+    });
   } else {
-    // header.style.position = "static";
   }
-  scroll_now = window.pageYOffset;
+  // scroll_now = window.pageYOffset;
 });
-
-console.log(slogan);

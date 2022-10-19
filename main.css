@@ -95,18 +95,34 @@ main {
   cursor: pointer;
 }
 
+.header__main-menu > ul > li:hover {
+  height: 49px;
+  border-bottom: 4px solid #1f4787;
+  color: #1f4787;
+  cursor: pointer;
+}
+
 /* 호버시 확장되는 메인 메뉴*/
-.main-menu .prod {
-  display: none;
-  width: 100%;
+.main-menu .menu-list {
+  width: 100vw;
+  height: 100%;
   top: 81px;
   left: 0;
   right: 0;
   position: absolute;
+  /* 확대시 문제됨.. */
+  margin-left: calc(-50vw + 50%);
+  display: none;
+}
+
+.main-menu .prod {
+  width: 100%;
+  /* min-width: 50%; */
   background-color: #fff;
   border-bottom: 1px solid #e5e5e5;
   /* 메뉴마다 다른부분 */
   height: 370px;
+  justify-content: center;
 }
 
 .prod__top {
@@ -134,6 +150,7 @@ main {
 }
 .prod__top--left {
   width: 10%;
+  max-width: 300px;
   padding-top: 12px;
 }
 .prod__top--left ul {
@@ -143,6 +160,7 @@ main {
 .prod__top--right {
   height: 100%;
   width: 65%;
+  max-width: 1600px;
   display: flex;
   padding-left: 30px;
   padding-top: 12px;
@@ -165,7 +183,21 @@ main {
 .prod__bottom {
   width: 100%;
   height: 20%;
+  min-width: 1000px;
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  position: relative;
   border-top: 1px solid #e5e5e5;
+  color: #1f4787;
+  font-weight: 700;
+}
+
+.prod__bottom p {
+  display: flex;
+  position: absolute;
+  right: 200px;
+  align-items: center;
 }
 
 /* 헤더 서브메뉴 */
@@ -216,7 +248,8 @@ main {
   vertical-align: middle;
   /* background-position: -25px -35px; 이건 hover됐을 때!*/
 }
-.header__sub-menu--loc > a:visited {
+.header__sub-menu--loc > a:visited,
+.header__sub-menu--loc > a:link {
   color: #707070;
 }
 
@@ -611,6 +644,7 @@ main {
 }
 
 .slogan__text {
+  display: none;
   width: 88%;
   color: #000;
   font-size: 120px;
@@ -658,5 +692,76 @@ main {
     transform: translateY(0);
   }
 }
-
 /* -------------------------------------------------------- */
+.half-slide {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.half-slide section {
+  width: 50%;
+  height: 100%;
+}
+
+.half-slide--left {
+  background-color: #1a4ab9;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.half-slide--left .left__text {
+  display: flex;
+  position: absolute;
+  width: auto;
+}
+
+.half-slide .text-list {
+  width: 527px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.half-slide .text-list .heading {
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.half-slide .text-list .desc p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 40px;
+}
+
+.half-slide .text-list .desc span {
+  display: block;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #f1c942;
+}
+
+.half-slide--right {
+  width: 100%;
+  height: 100%;
+}
+
+.right__image {
+  width: 100%;
+  height: 100%;
+}
+
+.half-slide--right .image-list {
+  width: 100%;
+  height: 100%;
+  background: url("./images/award_cut04.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
